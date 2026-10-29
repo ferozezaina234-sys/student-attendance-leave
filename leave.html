@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leave Requests | StudentManagement</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark main-nav"><div class="container">
+<a class="navbar-brand" href="dashboard.html">StudentManagement<span>.</span></a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="menu"><ul class="navbar-nav ms-auto align-items-lg-center">
+<li><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+<li><a class="nav-link" href="attendance.html">Attendance</a></li>
+<li><a class="nav-link active" href="leave.html">Leave Requests</a></li>
+<li><a class="nav-link" href="notifications.html">Notifications</a></li>
+<li><a class="nav-link" href="reports.html">Reports</a></li>
+<li><button class="btn btn-outline-light btn-sm" id="logoutBtn">Logout</button></li>
+</ul></div></div></nav>
+
+<main class="container py-5">
+<span class="eyebrow">STUDENT SERVICES</span>
+<h1 class="page-title mt-2">Leave Management</h1>
+<p class="page-subtitle">Submit an application and track the administrator's decision.</p>
+<div id="message" class="alert d-none"></div>
+<div class="row g-4">
+<div class="col-lg-5"><section class="content-card">
+<div class="section-heading"><h5>Apply for Leave</h5><p>Fill in your leave details</p></div>
+<form id="leaveForm">
+<label class="form-label">From date</label>
+<input class="form-control mb-3" type="date" name="fromDate" id="fromDate" required>
+<label class="form-label">To date</label>
+<input class="form-control mb-3" type="date" name="toDate" id="toDate" required>
+<label class="form-label">Reason for leave</label>
+<textarea class="form-control mb-3" name="reason" rows="4" maxlength="1000" required placeholder="Explain why you need leave"></textarea>
+<button class="btn btn-primary w-100">Submit Request</button>
+</form>
+</section></div>
+<div class="col-lg-7"><section class="content-card">
+<div class="section-heading"><h5>My Applications</h5><p>Current status of your requests</p></div>
+<div class="table-responsive"><table class="table align-middle">
+<thead><tr><th>From</th><th>To</th><th>Reason</th><th>Status</th></tr></thead>
+<tbody id="leaveRows"><tr><td colspan="4">Loading requests...</td></tr></tbody>
+</table></div>
+</section></div>
+</div>
+</main>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/leave.js"></script>
+</body>
+</html>
